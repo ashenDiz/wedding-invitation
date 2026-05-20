@@ -38,13 +38,24 @@ html {
 
 
 .hero {
-  background-image: url(https://picsum.photos/id/25/1920/1080);
-  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://picsum.photos/id/381/1920/1080") no-repeat;
+  /* Note: The 'background' shorthand below overrides this background-image, so this line isn't strictly necessary */
+  background-image: url(https://picsum.photos/id/25/1920/1080); 
+  
+  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://www.lewisbishopphotography.co.uk/wp-content/uploads/2024/04/Moxhull-Hall-Wedding-Photographer-Lewis-Bishop-Photography-54.jpg") no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-position: center center; /* Centers the image globally */
   color: white;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Raleway', sans-serif;
+}
+
+/* Mobile-specific view */
+@media screen and (max-width: 768px) {
+  .hero {
+    background-position: center center; /* Ensures the center crop on mobile */
+    background-attachment: scroll; /* Prevents the massive zoom/crop bug on iOS Safari */
+  }
 }
 
 
@@ -651,4 +662,607 @@ body.preloader-site {
   vertical-align: middle;
   text-align: center;
   padding: 10px;
+}
+
+/* Custom CSS for A Love Story and Wedding Details Sections */
+/* Perfectly matched to the 'menikah' theme colors and typography */
+
+.section-elegant {
+  background-color: transparent; /* Blends with existing light/white sections */
+  padding: 80px 40px;
+  font-family: 'Raleway', Tahoma, sans-serif;
+}
+
+.sub-heading {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #BC8887; /* dusty-pink-darker */
+  margin-bottom: 0.5rem;
+}
+
+.elegant-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #996E6D; /* dusty-pink-darkest */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.elegant-title span {
+  font-family: 'Rouge Script', cursive;
+  font-size: 4.5rem;
+  color: #996E6D;
+  text-transform: none;
+  font-weight: normal;
+  letter-spacing: 0px;
+  line-height: 1;
+  margin-top: -10px;
+}
+
+/* ========================================== */
+/* Love Story Timeline                        */
+/* ========================================== */
+
+.timeline-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #EDD2D1; /* dusty-pink-lighter */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.timeline-item {
+  padding: 20px 50px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+/* Timeline Dots */
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: #996E6D;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 2px #BC8887;
+  top: 25px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-item.left::after {
+  right: -9px;
+}
+
+.timeline-item.right::after {
+  left: -9px;
+}
+
+.timeline-year {
+  color: #BC8887;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #996E6D;
+  margin-bottom: 10px;
+}
+
+.timeline-text {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.8;
+}
+
+/* ========================================== */
+/* Wedding Details Cards                      */
+/* ========================================== */
+
+.details-card {
+  border: 2px solid #EDD2D1; /* dusty-pink-lighter */
+  border-radius: 10px; /* Matches your tile border radius */
+  padding: 3rem 2rem;
+  max-width: 650px;
+  margin: 0 auto 2.5rem auto;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(153, 110, 109, 0.15); /* Soft pinkish shadow matching theme */
+  transition: all .2s ease-in-out;
+}
+
+.details-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(153, 110, 109, 0.25);
+}
+
+.details-card .time-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #BC8887;
+  margin-bottom: 1.5rem;
+}
+
+.details-card h3 {
+  font-family: 'Rouge Script', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: #996E6D;
+  line-height: 1.2;
+}
+
+.details-card p {
+  color: #333333;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+  .section-elegant {
+    padding: 60px 20px;
+  }
+  
+  .timeline-container::after {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 10px;
+    text-align: left !important;
+  }
+  
+  .timeline-item.right {
+    left: 0;
+  }
+  
+  .timeline-item.left::after, 
+  .timeline-item.right::after {
+    left: 11px;
+  }
+  
+  .details-card {
+    padding: 2rem 1rem;
+  }
+  
+  .details-card h3 {
+    font-size: 2.8rem;
+  }
+}
+
+/* ========================================== */
+/* Ultra-Minimalist RSVP Form Section         */
+/* ========================================== */
+
+#rsvp {
+  background-color: #FDFBF7; /* Very light warm cream background */
+  padding: 80px 20px;
+}
+
+.rsvp-subtitle {
+  color: #8C8279;
+  font-size: 0.95rem;
+  margin-top: -3.5rem; 
+  margin-bottom: 4rem;
+  line-height: 1.6;
+  font-family: 'Raleway', sans-serif;
+}
+
+.rsvp-subtitle strong {
+  color: #B88A75;
+  font-weight: 600;
+}
+
+.rsvp-form-container {
+  max-width: 550px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.field {
+  margin-bottom: 2.5rem !important; 
+}
+
+.rsvp-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+  color: #8C8279;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* Minimalist Input Styling */
+.rsvp-input, 
+.rsvp-select select {
+  border: none !important;
+  border-bottom: 1px solid #E3D1C1 !important; /* Light copper/tan border */
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding-left: 0;
+  padding-bottom: 10px;
+  color: #5A514B;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+.rsvp-input::placeholder {
+  color: #C0B7B1;
+  font-weight: 400;
+}
+
+.rsvp-input:focus, 
+.rsvp-select select:focus {
+  border-bottom: 1px solid #B88A75 !important;
+  outline: none;
+}
+
+/* Fix Bulma Select Arrow */
+.rsvp-select::after {
+  border-color: #B88A75 !important;
+  right: 0 !important; 
+}
+
+/* Attendance Buttons */
+.attendance-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+
+.rsvp-btn-accept, 
+.rsvp-btn-decline {
+  flex: 1;
+  height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  border-radius: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.rsvp-btn-accept {
+  background-color: #C98D77; /* Terracotta copper */
+  color: white;
+  border: none;
+}
+
+.rsvp-btn-accept:hover, 
+.rsvp-btn-accept.is-active {
+  background-color: #B37965;
+  color: white;
+}
+
+.rsvp-btn-decline {
+  background-color: transparent;
+  color: #A39B95;
+  border: 1px solid #E3D1C1;
+}
+
+.rsvp-btn-decline:hover, 
+.rsvp-btn-decline.is-active {
+  border: 1px solid #C98D77;
+  color: #C98D77;
+}
+
+/* Submit Button */
+.submit-control {
+  margin-top: 4rem;
+}
+
+.rsvp-submit {
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(135deg, #C29676 0%, #B88762 100%); /* Gold/Bronze */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.rsvp-submit:hover {
+  color: white;
+  opacity: 0.9;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 599px) {
+  .attendance-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .rsvp-form-container {
+    padding: 0 15px;
+  }
+}
+/* ========================================== */
+/* Envelope Intro Animation                   */
+/* ========================================== */
+
+#envelope-screen {
+  --env-bg: #FDFBF7; /* Cream background to match your RSVP */
+  --env-dark: #996E6D; /* Your dusty pink */
+  --env-gold: #C29676; /* Your gold gradient color */
+  --env-text: #5A514B; 
+
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, #FDFBF7 0%, #EDD2D1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  overflow: hidden;
+  transition: opacity .8s ease, transform .8s ease;
+  font-family: 'Raleway', sans-serif;
+}
+
+#envelope-screen.fading {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+.hidden { display: none !important; }
+
+/* Floating Petals */
+.env-petals { position: absolute; inset: 0; pointer-events: none; }
+.env-petal {
+  position: absolute;
+  font-size: 1.4rem;
+  opacity: 0;
+  animation: envPetalFloat var(--dur, 6s) var(--delay, 0s) infinite ease-in-out;
+}
+@keyframes envPetalFloat {
+  0%   { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-20vh) rotate(720deg); opacity: 0; }
+}
+
+.envelope-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Envelope Body */
+.envelope {
+  position: relative;
+  width: min(320px, 82vw);
+  height: min(220px, 56vw);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 20px 40px rgba(153, 110, 109, 0.3));
+  transition: transform .3s ease;
+}
+.envelope:hover { transform: translateY(-6px) scale(1.02); }
+
+.env-back {
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  border: 1px solid #E3D1C1;
+  border-radius: 4px;
+}
+
+/* Envelope Flap */
+.env-flap {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 50%;
+  background: #fbf9f6;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  border-top: 1px solid #E3D1C1;
+  transform-origin: top center;
+  transition: transform .7s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+.envelope.open .env-flap {
+  transform: rotateX(180deg);
+}
+
+.env-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent 49%, #ffffff 50%);
+}
+
+/* Wax Seal */
+.env-wax {
+  width: 60px;
+  height: 60px;
+  background: var(--env-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-family: 'Rouge Script', cursive;
+  font-size: 1.5rem;
+  color: white;
+  box-shadow: 0 4px 15px rgba(153, 110, 109, 0.4);
+  transition: transform .4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.envelope.open .env-wax { transform: scale(0) rotate(-45deg); opacity: 0; }
+.env-amp { font-size: 1rem; }
+
+/* The Letter */
+.env-letter {
+  position: absolute;
+  bottom: 8%;
+  left: 5%;
+  width: 90%;
+  background: #ffffff;
+  border: 1px solid #E3D1C1;
+  border-radius: 2px;
+  padding: 1.5rem;
+  text-align: center;
+  z-index: 1;
+  transform: translateY(0);
+  transition: transform .9s .3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+}
+.envelope.open .env-letter {
+  transform: translateY(-65%);
+}
+.env-letter-line {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.85rem;
+  color: var(--env-text);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.env-letter-script {
+  font-family: 'Rouge Script', cursive;
+  font-size: 2.5rem;
+  color: var(--env-dark);
+  line-height: 1;
+  margin-top: 10px;
+}
+
+/* Buttons and Hints */
+.env-open-btn {
+  background: transparent;
+  border: 1px solid var(--env-dark);
+  color: var(--env-dark);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all .3s ease;
+  border-radius: 4px;
+}
+.env-open-btn:hover {
+  background: var(--env-dark);
+  color: white;
+}
+.env-open-btn.hidden { display: none !important; }
+
+.env-hint {
+  font-size: 0.75rem;
+  color: #8C8279;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: pulse 2.5s infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.5 } 50% { opacity: 1 } }
+
+/* ========================================== */
+/* Floating Audio Player                      */
+/* ========================================== */
+.audio-widget {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.music-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fbf9f6;
+  border: 1px solid #E3D1C1;
+  color: #B88A75;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(153, 110, 109, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.music-btn:hover {
+  background-color: #996E6D;
+  color: white;
+  border-color: #996E6D;
+}
+
+/* Spin animation when playing */
+.music-btn.playing i {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ========================================== */
+/* Top Scroll Progress Bar                    */
+/* ========================================== */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 4px;
+  background-color: transparent;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #996E6D 0%, #C29676 100%);
+  width: 0%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
