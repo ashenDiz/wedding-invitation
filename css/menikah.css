@@ -38,15 +38,18 @@ html {
 
 
 .hero {
-  /* Note: The 'background' shorthand below overrides this background-image, so this line isn't strictly necessary */
-  background-image: url(https://picsum.photos/id/25/1920/1080); 
-  
-  background: linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)), rgba(0, 0, 0, 0.55) url("https://www.lewisbishopphotography.co.uk/wp-content/uploads/2024/04/Moxhull-Hall-Wedding-Photographer-Lewis-Bishop-Photography-54.jpg") no-repeat;
+  background:
+    linear-gradient(rgba(153, 110, 109, 0.65), rgba(153, 110, 109, 0.65)),
+    url("../image/nethmi_gihan/hero.jpeg");
+
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center; /* Centers the image globally */
+  background-position: center;
+  background-repeat: no-repeat;
+
   color: white;
-  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16),
+              0 3px 6px rgba(0, 0, 0, 0.23);
   font-family: 'Raleway', sans-serif;
 }
 
@@ -576,7 +579,7 @@ body.preloader-site {
 
 
 .foto1 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/beatriz-perez-moya-M2T1j-6Fn8w-unsplash.jpg");
+  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nethmi_gihan/img1.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -585,7 +588,7 @@ body.preloader-site {
 
 
 .foto2 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/evelina-friman-hw_sKmjb0ns-unsplash.jpg");
+  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nethmi_gihan/img2.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat:no-repeat;
@@ -593,15 +596,15 @@ body.preloader-site {
 }
 
 .foto3 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-464ps_nOflw-unsplash.jpg");
+  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nethmi_gihan/img3.jpeg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
   min-height: 24rem;
 }
 
-.foto4 {
-  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/jeremy-wong-weddings-K8KiCHh4WU4-unsplash.jpg");
+/* .foto4 {
+  background-image: linear-gradient(rgba(95, 2, 2, 0.5), rgba(48, 47, 47, 0.9)), url("../image/nethmi_gihan/img4.jpg");
   background-size: cover;
   background-position: top;
   background-repeat:no-repeat;
@@ -623,7 +626,7 @@ body.preloader-site {
   background-position: center;
   background-repeat:no-repeat;
   min-height: 24rem;
-}
+} */
 
 
 
@@ -950,17 +953,29 @@ body.preloader-site {
   margin-top: 1rem;
 }
 
-.rsvp-btn-accept, 
+.rsvp-btn-accept,
 .rsvp-btn-decline {
   flex: 1;
   height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.7rem;
-  border-radius: 0;
+  border-radius: 4px;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  border: 2px solid #E3D1C1;
+  background-color: transparent;
+  color: #A39B95;
+}
+
+.rsvp-check {
+  display: none;
+  font-size: 0.85rem;
 }
 
 .rsvp-btn-accept {
@@ -971,8 +986,10 @@ body.preloader-site {
 
 .rsvp-btn-accept:hover, 
 .rsvp-btn-accept.is-active {
-  background-color: #B37965;
+  background-color: #C98D77;
+  border-color: #C98D77;
   color: white;
+  box-shadow: 0 4px 14px rgba(201, 141, 119, 0.35);
 }
 
 .rsvp-btn-decline {
@@ -983,7 +1000,18 @@ body.preloader-site {
 
 .rsvp-btn-decline:hover, 
 .rsvp-btn-decline.is-active {
-  border: 1px solid #C98D77;
+  background-color: #996E6D;
+  border-color: #996E6D;
+  color: white;
+  box-shadow: 0 4px 14px rgba(153, 110, 109, 0.35);
+}
+.rsvp-btn-accept.is-active .rsvp-check,
+.rsvp-btn-decline.is-active .rsvp-check {
+  display: inline;
+}
+.rsvp-btn-accept:not(.is-active):hover,
+.rsvp-btn-decline:not(.is-active):hover {
+  border-color: #C98D77;
   color: #C98D77;
 }
 
